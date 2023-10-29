@@ -14,12 +14,6 @@ const speciesPics: Record<string, string> = {
   Wookie: wookie,
 };
 
-// const speciesPicsMap = new Map([
-//   ["Yoda's species", grogu],
-//   ['Droid', bb8],
-// ]);
-// speciesPicsMap.set('Wookie', wookie);
-
 export class BottomSection extends React.Component<Props> {
   render() {
     return (
@@ -28,7 +22,6 @@ export class BottomSection extends React.Component<Props> {
           <Card
             key={aSpecies.url}
             image={speciesPics[aSpecies.name]}
-            // image={speciesPicsMap.get(aSpecies.name) ?? grogu}
             name={aSpecies.name}
             classification={aSpecies.classification}
             designation={aSpecies.designation}

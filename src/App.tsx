@@ -1,4 +1,3 @@
-import './app.css';
 import React from 'react';
 import { HeroPage } from './hero_page/hero_page';
 

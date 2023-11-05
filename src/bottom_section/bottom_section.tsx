@@ -8,7 +8,6 @@ import moncalamari from '../assets/moncalamari.png';
 import ewok from '../assets/ewok.png';
 import human from '../assets/human.png';
 import sullustan from '../assets/sullustan.png';
-import React from 'react';
 import { Card, SpeciesDTO } from '../card';
 import style from '../app.module.scss';
 

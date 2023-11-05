@@ -72,6 +72,7 @@ body::-webkit-scrollbar-thumb {
   aspect-ratio: 1 / 0.8;
   margin: 0 auto;
   background-size: contain;
+  border-radius: 10px;
 }
 
 .preloader {
@@ -84,6 +85,8 @@ body::-webkit-scrollbar-thumb {
 .card_wrapper {
   display: flex;
   flex-direction: row;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .card_text {

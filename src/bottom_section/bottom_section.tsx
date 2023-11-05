@@ -29,26 +29,24 @@ const speciesPics: Record<string, string> = {
   Sullustan: sullustan,
 };
 
-export class BottomSection extends React.Component<Props> {
-  render() {
-    return (
-      <div className={style.content_wrapper}>
-        {this.props.species.map((aSpecies) => (
-          <Card
-            key={aSpecies.url}
-            image={speciesPics[aSpecies.name]}
-            name={aSpecies.name}
-            classification={aSpecies.classification}
-            designation={aSpecies.designation}
-            average_height={aSpecies.average_height}
-            average_lifespan={aSpecies.average_lifespan}
-            hair_colors={aSpecies.hair_colors}
-            skin_colors={aSpecies.skin_colors}
-            eye_colors={aSpecies.eye_colors}
-            language={aSpecies.language}
-          />
-        ))}
-      </div>
-    );
-  }
+export function BottomSection(props: Props) {
+  return (
+    <div className={style.content_wrapper}>
+      {props.species.map((aSpecies) => (
+        <Card
+          key={aSpecies.url}
+          image={speciesPics[aSpecies.name]}
+          name={aSpecies.name}
+          classification={aSpecies.classification}
+          designation={aSpecies.designation}
+          average_height={aSpecies.average_height}
+          average_lifespan={aSpecies.average_lifespan}
+          hair_colors={aSpecies.hair_colors}
+          skin_colors={aSpecies.skin_colors}
+          eye_colors={aSpecies.eye_colors}
+          language={aSpecies.language}
+        />
+      ))}
+    </div>
+  );
 }

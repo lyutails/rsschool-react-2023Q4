@@ -1,3 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 html {
   display: flex;
   flex-direction: column;
@@ -35,7 +41,7 @@ body::-webkit-scrollbar-thumb {
 .header {
   height: 100px;
   width: 100%;
-  background-color: black;
+  background: linear-gradient(0.75turn, white, black);
 
   &_wrapper {
     width: 90vw;
@@ -60,6 +66,18 @@ body::-webkit-scrollbar-thumb {
 
 .header_input:focus::placeholder {
   color: transparent;
+}
+
+.grogu_looking {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url('./assets/grogu_looking.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-blend-mode: lighten;
 }
 
 .card_fancy {

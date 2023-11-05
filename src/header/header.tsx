@@ -52,6 +52,7 @@ export function Header({
           Get Error
         </button>
       </div>
+      <div className={style.grogu_looking}></div>
     </div>
   );
 }

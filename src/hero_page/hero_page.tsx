@@ -19,6 +19,7 @@ export function HeroPage() {
     setisLoading(true);
     const data = await searchSpecies(inputValue);
     const species = data.results;
+    console.log(species);
     setSpecies(species);
     setisLoading(false);
   }

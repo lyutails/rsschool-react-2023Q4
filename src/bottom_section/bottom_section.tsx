@@ -8,6 +8,7 @@ import moncalamari from '../assets/moncalamari.png';
 import ewok from '../assets/ewok.png';
 import human from '../assets/human.png';
 import sullustan from '../assets/sullustan.png';
+import toydarian from '../assets/toydarian.png';
 import { Card, SpeciesDTO } from '../card';
 import style from '../app.module.scss';
 
@@ -26,6 +27,7 @@ const speciesPics: Record<string, string> = {
   'Mon Calamari': moncalamari,
   Ewok: ewok,
   Sullustan: sullustan,
+  Toydarian: toydarian,
 };
 
 export function BottomSection(props: Props) {

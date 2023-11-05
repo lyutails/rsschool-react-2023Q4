@@ -105,6 +105,9 @@ body::-webkit-scrollbar-thumb {
   flex-direction: row;
   margin-top: 5px;
   margin-bottom: 5px;
+  border: 1px #333 solid;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .card_text {

@@ -1,8 +1,16 @@
 import grogu from '../assets/grogu.png';
-import bb8 from '../assets/bb-8-d-o_38bbab89.jpeg';
-import wookie from '../assets/wookie.jpg';
+import bb8 from '../assets/droid.png';
+import wookie from '../assets/wookie.png';
+import rodian from '../assets/rodian.png';
+import hutt from '../assets/hutt.png';
+import trandoshan from '../assets/trandoshan.png';
+import moncalamari from '../assets/moncalamari.png';
+import ewok from '../assets/ewok.png';
+import human from '../assets/human.png';
+import sullustan from '../assets/sullustan.png';
 import React from 'react';
 import { Card, SpeciesDTO } from '../card';
+import style from '../app.module.scss';
 
 interface Props {
   species: SpeciesDTO[];
@@ -12,12 +20,19 @@ const speciesPics: Record<string, string> = {
   "Yoda's species": grogu,
   Droid: bb8,
   Wookie: wookie,
+  Human: human,
+  Rodian: rodian,
+  Hutt: hutt,
+  Trandoshan: trandoshan,
+  'Mon Calamari': moncalamari,
+  Ewok: ewok,
+  Sullustan: sullustan,
 };
 
 export class BottomSection extends React.Component<Props> {
   render() {
     return (
-      <div>
+      <div className={style.content_wrapper}>
         {this.props.species.map((aSpecies) => (
           <Card
             key={aSpecies.url}

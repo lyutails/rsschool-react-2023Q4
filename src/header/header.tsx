@@ -1,9 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from '../app.module.scss';
-
-interface State {
-  hasError: boolean;
-}
 
 interface Props {
   searchValue: string;
@@ -11,30 +7,33 @@ interface Props {
   changeSearchValue: (data: string) => void;
 }
 
-export class Header extends React.Component<Props, State> {
-  state: State = {
-    hasError: false,
-  };
-  render() {
-    if (this.state.hasError) {
-      throw new Error('lalala');
-    }
-    return (
-      <div className={style.header}>
+export function Header({
+  searchValue,
+  fetchSpecies,
+  changeSearchValue,
+}: Props) {
+  const [hasError, setHasError] = useState<boolean>(false);
+
+  if (hasError) {
+    throw new Error('lalala');
+  }
+  return (
+    <div className={style.header}>
+      <div className={style.header_wrapper}>
         <input
           placeholder="Search..."
-          value={this.props.searchValue}
+          value={searchValue}
           className={style.header_input}
           onChange={(e): void => {
-            this.props.changeSearchValue(e.target.value);
+            changeSearchValue(e.target.value);
           }}
         ></input>
         <button
           className={style.cross}
           onClick={() => {
             localStorage.removeItem('searchValue');
-            this.props.changeSearchValue('');
-            this.props.fetchSpecies('');
+            changeSearchValue('');
+            fetchSpecies('');
           }}
         >
           cross
@@ -42,19 +41,17 @@ export class Header extends React.Component<Props, State> {
         <button
           className={style.header_search}
           onClick={() => {
-            this.props.fetchSpecies(this.props.searchValue);
-            localStorage.setItem('searchValue', `${this.props.searchValue}`);
+            fetchSpecies(searchValue);
+            localStorage.setItem('searchValue', `${searchValue}`);
           }}
         ></button>
         <button
           className={style.header_error}
-          onClick={() =>
-            this.setState((prevState) => ({ ...prevState, hasError: true }))
-          }
+          onClick={() => setHasError(true)}
         >
           Get Error
         </button>
       </div>
-    );
-  }
+    </div>
+  );
 }

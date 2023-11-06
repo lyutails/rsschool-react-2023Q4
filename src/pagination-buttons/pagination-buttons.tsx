@@ -32,7 +32,7 @@ export function PaginationButtons({
       </button>
       <button
         onClick={() => {
-          changePage(page - 1);
+          page === 1 ? (page = 1) : changePage(page - 1);
         }}
       >
         previous
@@ -40,7 +40,7 @@ export function PaginationButtons({
       <div>{page}</div>
       <button
         onClick={() => {
-          changePage(page + 1);
+          page === 4 ? (page = 4) : changePage(page + 1);
         }}
       >
         next

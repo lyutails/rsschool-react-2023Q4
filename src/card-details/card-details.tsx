@@ -1,12 +1,12 @@
 import style from './card-details.module.scss';
 import { ApiResponseRace, searchASpecies } from '../api/api';
-import { NavLink, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 import Spinner from '../spinner';
 import { Details } from './details';
 
 export function CardDetails() {
-  const { id } = useParams();
+  const { id, pageNumber, querySearch } = useParams();
   const [isLoading, setisLoading] = useState(false);
   const [aSpecies, setASpecies] = useState<ApiResponseRace | null>(null);
 
@@ -27,6 +27,10 @@ export function CardDetails() {
     fetchSpecies(+id);
   }, [fetchSpecies, id]);
 
+  const queryInput = querySearch
+    ? `/page/${pageNumber}/search/${querySearch}`
+    : `/page/${pageNumber}`;
+
   if (isLoading) {
     return <Spinner />;
   }
@@ -36,9 +40,9 @@ export function CardDetails() {
         <div className={style.details_wrapper}>
           <div className={style.card_top}>
             <span className={style.card_id}>{id}</span>
-            <NavLink to={`/`} className={style.card_close}>
+            <Link to={queryInput} className={style.card_close}>
               close
-            </NavLink>
+            </Link>
           </div>
           <Details
             key={aSpecies.url}
@@ -53,9 +57,9 @@ export function CardDetails() {
             language={aSpecies.language}
           />
         </div>
-        <NavLink to={`/`} className={style.main_close}>
+        <Link to={`/`} className={style.main_close}>
           <div className={style.overlay}></div>
-        </NavLink>
+        </Link>
       </div>
     )
   );

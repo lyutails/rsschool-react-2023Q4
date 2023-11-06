@@ -6,21 +6,28 @@ import { Footer } from '../footer/footer';
 import { Header } from '../header/header';
 import { PaginationButtons } from '../pagination-buttons/pagination-buttons';
 import Spinner from '../spinner';
+import { useParams } from 'react-router-dom';
 
 export function HeroPage() {
+  const { pageNumber, querySearch } = useParams();
+
+  const query = querySearch ? querySearch : '';
+
+  console.log(query);
+
   const inputValueLocal = localStorage.getItem('searchValue');
   const [species, setSpecies] = useState<ApiResponseRace[]>([]);
   const [searchValue, setSearchValue] = useState(
-    inputValueLocal ? inputValueLocal : ''
+    inputValueLocal ? inputValueLocal : query
   );
   const [isLoading, setisLoading] = useState(false);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(pageNumber ? +pageNumber : 1);
   const [countSpecies, setCountSpecies] = useState(0);
 
   const fetchSpecies = useCallback(
-    async (inputValue: string) => {
+    async (searchValue: string) => {
       setisLoading(true);
-      const data = await searchSpecies(inputValue, page);
+      const data = await searchSpecies(searchValue, page);
       const species = data.results;
       const speciesCount = data.count;
       setSpecies(species);
@@ -40,6 +47,7 @@ export function HeroPage() {
         searchValue={searchValue}
         fetchSpecies={(inputValue) => fetchSpecies(inputValue)}
         changeSearchValue={setSearchValue}
+        changePage={setPage}
       />
       <PaginationButtons
         page={page}
@@ -47,11 +55,12 @@ export function HeroPage() {
         changePagePlus={() => setPage(page + 1)}
         changePage={(roma: number) => setPage(roma)}
         totalCount={countSpecies}
+        search={searchValue}
       ></PaginationButtons>
       {isLoading ? (
         <Spinner />
       ) : (
-        <BottomSection species={species} page={page} />
+        <BottomSection species={species} page={page} search={searchValue} />
       )}
       <Footer />
     </div>

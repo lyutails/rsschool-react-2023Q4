@@ -7,6 +7,7 @@ interface Props {
   changePagePlus: () => void;
   changePage: (data: number) => void;
   totalCount: number;
+  search: string;
 }
 
 export function PaginationButtons({
@@ -15,6 +16,7 @@ export function PaginationButtons({
   changePagePlus,
   changePage,
   totalCount,
+  search,
 }: Props) {
   const maxPage = Math.ceil(totalCount / 10);
   const minPage = 1;
@@ -41,7 +43,11 @@ export function PaginationButtons({
       <button
         onClick={() => {
           page > minPage && changePage(page - 1);
-          navigate(`/page=${page - 1}`);
+          if (search !== '') {
+            navigate(`/page/${page - 1}/search/${search}`);
+          } else {
+            navigate(`/page/${page - 1}`);
+          }
         }}
       >
         previous
@@ -52,7 +58,11 @@ export function PaginationButtons({
       <button
         onClick={() => {
           page < maxPage && changePage(page + 1);
-          navigate(`/page=${page + 1}`);
+          if (search !== '') {
+            navigate(`/page/${page + 1}/search/${search}`);
+          } else {
+            navigate(`/page/${page + 1}`);
+          }
         }}
       >
         next

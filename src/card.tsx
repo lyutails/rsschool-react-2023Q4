@@ -83,12 +83,18 @@ export type CardSpeciesProps = Omit<ApiResponseRace, 'url'>;
 interface Props {
   species: ApiResponseRace;
   page: number;
+  search: string;
 }
 
-export function Card({ species, page }: Props) {
+export function Card({ species, page, search }: Props) {
   const id = species.url?.split('/').at(-2) || '';
+
+  const query = search.length
+    ? `/page/${page}/search/${search}/species/${id}`
+    : `/page/${page}/species/${id}`;
+
   return (
-    <NavLink to={`/page=${page}/species/${id}`} className={style.card_link}>
+    <NavLink to={query} className={style.card_link}>
       <div className={style.card_wrapper}>
         <div className={style.card_fancy}>
           {'>>>'}

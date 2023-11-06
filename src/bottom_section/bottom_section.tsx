@@ -6,6 +6,7 @@ import { Outlet } from 'react-router-dom';
 interface Props {
   species: ApiResponseRace[];
   page: number;
+  search: string;
 }
 
 export function BottomSection(props: Props) {
@@ -14,7 +15,12 @@ export function BottomSection(props: Props) {
       <div className={style.content_wrapper}>
         {props.species.map((aSpecies) => {
           return (
-            <Card key={aSpecies.url} species={aSpecies} page={props.page} />
+            <Card
+              key={aSpecies.url}
+              species={aSpecies}
+              page={props.page}
+              search={props.search}
+            />
           );
         })}
       </div>

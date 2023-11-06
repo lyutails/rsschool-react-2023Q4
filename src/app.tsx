@@ -21,10 +21,22 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="/" element={<HeroPage />} errorElement={<ErrorPage />}>
-        <Route path="/:params/species/:id" element={<CardDetails />}></Route>
+        <Route
+          path="/page/:pageNumber/species/:id"
+          element={<CardDetails />}
+        ></Route>
+        <Route
+          path="/page/:pageNumber/search/:querySearch/species/:id"
+          element={<CardDetails />}
+        ></Route>
       </Route>
       <Route
-        path="/:params"
+        path="/page/:pageNumber"
+        element={<HeroPage />}
+        errorElement={<ErrorPage />}
+      />
+      <Route
+        path="/page/:pageNumber/search/:querySearch/"
         element={<HeroPage />}
         errorElement={<ErrorPage />}
       />

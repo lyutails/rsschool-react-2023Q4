@@ -1,6 +1,6 @@
 import style from './card-details.module.scss';
 import { ApiResponseRace, searchASpecies } from '../api/api';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 import Spinner from '../spinner';
 import { Details } from './details';
@@ -16,7 +16,6 @@ export function CardDetails() {
       throw new Error('no id found');
     }
     const data = await searchASpecies(+id);
-    console.log(data);
     setASpecies(data);
     setisLoading(false);
   }, []);
@@ -31,11 +30,15 @@ export function CardDetails() {
   if (isLoading) {
     return <Spinner />;
   }
-
   return (
     aSpecies !== null && (
       <div className={style.details_wrapper}>
-        {id}
+        <div className={style.card_top}>
+          <span className={style.card_id}>{id}</span>
+          <NavLink to={`/`} className={style.card_close}>
+            close
+          </NavLink>
+        </div>
         <Details
           key={aSpecies.url}
           name={aSpecies.name}

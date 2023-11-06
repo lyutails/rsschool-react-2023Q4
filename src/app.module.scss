@@ -116,10 +116,6 @@ body::-webkit-scrollbar-thumb {
   border: 1px #333 solid;
   border-radius: 10px;
   padding: 5px;
-
-  &:not(:last-child) {
-    margin-bottom: 10px;
-  }
 }
 
 .card_text {
@@ -131,6 +127,12 @@ body::-webkit-scrollbar-thumb {
 
 .card_info.name {
   font-weight: 800;
+}
+
+.card_link {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 
 .content_wrapper {

@@ -1,5 +1,5 @@
 import style from './app.module.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { ApiResponseRace } from './api/api';
 
 export type CardSpeciesProps = Omit<ApiResponseRace, 'url'>;
@@ -7,7 +7,7 @@ export type CardSpeciesProps = Omit<ApiResponseRace, 'url'>;
 export function Card(props: ApiResponseRace) {
   const id = props.url?.split('/').at(-2) || '';
   return (
-    <Link to={`species/${id}`}>
+    <NavLink to={`species/${id}`} className={style.card_link}>
       <div className={style.card_wrapper}>
         <div className={style.card_fancy}>
           {'>>>'}
@@ -28,6 +28,6 @@ export function Card(props: ApiResponseRace) {
           <div className={style.card_info}>Language: {props.language}</div>
         </div>
       </div>
-    </Link>
+    </NavLink>
   );
 }

@@ -9,3 +9,20 @@
   text-wrap: wrap;
   margin-left: 10px;
 }
+
+.card_close {
+  width: 5vw;
+  aspect-ratio: 1 / 1;
+  border: 1px solid #333;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

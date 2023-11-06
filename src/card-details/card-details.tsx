@@ -1,9 +1,9 @@
 import style from './card-details.module.scss';
-import { Card } from '../card';
 import { ApiResponseRace, searchASpecies } from '../api/api';
 import { useParams } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 import Spinner from '../spinner';
+import { Details } from './details';
 
 export function CardDetails() {
   const { id } = useParams();
@@ -38,9 +38,9 @@ export function CardDetails() {
 
   return (
     aSpecies !== null && (
-      <div className={style.content_wrapper}>
+      <div className={style.details_wrapper}>
         {id}
-        <Card
+        <Details
           key={aSpecies.url}
           name={aSpecies.name}
           classification={aSpecies.classification}

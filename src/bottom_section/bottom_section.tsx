@@ -12,6 +12,7 @@ import toydarian from '../assets/toydarian.png';
 import { Card } from '../card';
 import style from '../app.module.scss';
 import { ApiResponseRace } from '../api/api';
+import { Outlet } from 'react-router-dom';
 
 interface Props {
   species: ApiResponseRace[];
@@ -33,23 +34,23 @@ const speciesPics: Record<string, string> = {
 
 export function BottomSection(props: Props) {
   return (
-    <div className={style.content_wrapper}>
-      {props.species.map((aSpecies) => (
-        <Card
-          key={aSpecies.url}
-          image={speciesPics[aSpecies.name]}
-          name={aSpecies.name}
-          classification={aSpecies.classification}
-          designation={aSpecies.designation}
-          average_height={aSpecies.average_height}
-          average_lifespan={aSpecies.average_lifespan}
-          hair_colors={aSpecies.hair_colors}
-          skin_colors={aSpecies.skin_colors}
-          eye_colors={aSpecies.eye_colors}
-          language={aSpecies.language}
-          url={aSpecies.url}
-        />
-      ))}
+    <div className={style.bottom_section_wrapper}>
+      <div className={style.content_wrapper}>
+        {props.species.map((aSpecies) => (
+          <Card
+            key={aSpecies.url}
+            image={speciesPics[aSpecies.name]}
+            name={aSpecies.name}
+            classification={aSpecies.classification}
+            average_lifespan={aSpecies.average_lifespan}
+            language={aSpecies.language}
+            url={aSpecies.url}
+          />
+        ))}
+      </div>
+      <div id="detail">
+        <Outlet />
+      </div>
     </div>
   );
 }

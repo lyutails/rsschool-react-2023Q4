@@ -6,7 +6,6 @@ export type CardSpeciesProps = Omit<ApiResponseRace, 'url'>;
 
 export function Card(props: ApiResponseRace) {
   const id = props.url?.split('/').at(-2) || '';
-  console.log(props.url?.split('/'));
   return (
     <Link to={`species/${id}`}>
       <div className={style.card_wrapper}>
@@ -22,9 +21,6 @@ export function Card(props: ApiResponseRace) {
           </div>
           <div className={style.card_info}>
             Classification: {props.classification}
-          </div>
-          <div className={style.card_info}>
-            Designation: {props.designation}
           </div>
           <div className={style.card_info}>
             Average Lifespan: {props.average_lifespan}

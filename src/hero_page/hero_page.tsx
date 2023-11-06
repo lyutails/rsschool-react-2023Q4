@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
 import { ApiResponseRace, searchSpecies } from '../api/api';
 import style from '../app.module.scss';
 import { BottomSection } from '../bottom_section/bottom_section';
@@ -40,9 +39,6 @@ export function HeroPage() {
 
   return (
     <div className={style.main_wrapper}>
-      <div id="detail">
-        <Outlet />
-      </div>
       <Header
         searchValue={searchValue}
         fetchSpecies={(inputValue) => fetchSpecies(inputValue)}

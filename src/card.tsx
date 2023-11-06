@@ -1,24 +1,8 @@
-import React from 'react';
 import style from './app.module.scss';
 import { Link } from 'react-router-dom';
+import { ApiResponseRace } from './api/api';
 
-export interface SpeciesDTO {
-  image: string;
-  name: string;
-  classification: string;
-  designation: string;
-  average_height: string;
-  hair_colors: string;
-  skin_colors: string;
-  eye_colors: string;
-  average_lifespan: string;
-  language: string;
-  people?: string[];
-  films?: string[];
-  url?: string;
-}
-
-export type CardSpeciesProps = Omit<SpeciesDTO, 'url'>;
+export type CardSpeciesProps = Omit<ApiResponseRace, 'url'>;
 
 export function Card(props: CardSpeciesProps) {
   return (

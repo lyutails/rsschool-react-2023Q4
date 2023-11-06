@@ -11,10 +11,11 @@ import ewok from '../assets/ewok.png';
 import human from '../assets/human.png';
 import sullustan from '../assets/sullustan.png';
 import toydarian from '../assets/toydarian.png';
-import { Card, SpeciesDTO } from '../card';
+import { Card } from '../card';
+import { ApiResponseRace } from '../api/api';
 
 interface Props {
-  species: SpeciesDTO[];
+  species: ApiResponseRace[];
 }
 
 const speciesPics: Record<string, string> = {

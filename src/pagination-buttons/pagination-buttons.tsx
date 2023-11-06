@@ -5,6 +5,7 @@ interface Props {
   changePageMinus: () => void;
   changePagePlus: () => void;
   changePage: (data: number) => void;
+  totalCount: number;
 }
 
 export function PaginationButtons({
@@ -12,7 +13,10 @@ export function PaginationButtons({
   changePageMinus,
   changePagePlus,
   changePage,
+  totalCount,
 }: Props) {
+  const maxPage = Math.ceil(totalCount / 10);
+  const minPage = 1;
   return (
     <div className={style.pagination_wrapper}>
       <button
@@ -22,7 +26,9 @@ export function PaginationButtons({
       >
         previous
       </button>
-      <div>{page}</div>
+      <div>
+        {page}/{maxPage}
+      </div>
       <button
         onClick={() => {
           changePagePlus();
@@ -32,15 +38,21 @@ export function PaginationButtons({
       </button>
       <button
         onClick={() => {
-          page === 1 ? (page = 1) : changePage(page - 1);
+          //   if (page !== 1) {
+          //     changePage(page - 1);
+          //   }
+          page > minPage && changePage(page - 1);
+          // changePage(page === 1 ? 1 : page - 1);
         }}
       >
         previous
       </button>
-      <div>{page}</div>
+      <div>
+        {page}/{maxPage}
+      </div>
       <button
         onClick={() => {
-          page === 4 ? (page = 4) : changePage(page + 1);
+          page < maxPage && changePage(page + 1);
         }}
       >
         next

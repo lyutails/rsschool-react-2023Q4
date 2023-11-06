@@ -6,7 +6,6 @@ import { App } from './app';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import ErrorPage from './error-page/error-page';
 
- 
 /* const [species, setSpecies] = useState<SpeciesDTO[]>([]);
 
 async function rootLoader(inputValue: string) {

@@ -1,30 +1,34 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { searchSpecies } from '../api/api';
-import { SpeciesDTO } from '../card';
-import { Header } from '../header/header';
-import { BottomSection } from '../bottom_section/bottom_section';
-import Spinner from '../spinner';
-import style from '../app.module.scss';
-import { Footer } from '../footer/footer';
+import { useCallback, useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import { ApiResponseRace, searchSpecies } from '../api/api';
+import style from '../app.module.scss';
+import { BottomSection } from '../bottom_section/bottom_section';
+import { Footer } from '../footer/footer';
+import { Header } from '../header/header';
 import { PaginationButtons } from '../pagination-buttons/pagination-buttons';
+import Spinner from '../spinner';
 
 export function HeroPage() {
   const inputValueLocal = localStorage.getItem('searchValue');
-  const [species, setSpecies] = useState<SpeciesDTO[]>([]);
+  const [species, setSpecies] = useState<ApiResponseRace[]>([]);
   const [searchValue, setSearchValue] = useState(
     inputValueLocal ? inputValueLocal : ''
   );
   const [isLoading, setisLoading] = useState(false);
   const [page, setPage] = useState(1);
+  const [countSpecies, setCountSpecies] = useState(0);
 
   const fetchSpecies = useCallback(
     async (inputValue: string) => {
       setisLoading(true);
+      // const results = (await searchSpecies(inputValue, page)).results;
+      // const { results } = await searchSpecies(inputValue, page);
       const data = await searchSpecies(inputValue, page);
       const species = data.results;
-      console.log(species);
+      const speciesCount = data.count;
+      //console.log(species);
       setSpecies(species);
+      setCountSpecies(speciesCount);
       setisLoading(false);
     },
     [page]
@@ -50,6 +54,7 @@ export function HeroPage() {
         changePagePlus={() => setPage(page + 1)}
         // changePage={setPage}
         changePage={(roma: number) => setPage(roma)}
+        totalCount={countSpecies}
       ></PaginationButtons>
       {isLoading ? <Spinner /> : <BottomSection species={species} />}
       <Footer />

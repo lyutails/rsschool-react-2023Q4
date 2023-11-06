@@ -3,6 +3,7 @@
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
+  z-index: 10;
 }
 
 .wheel-and-hamster {
@@ -360,4 +361,12 @@
   to {
     transform: rotate(-1turn);
   }
+}
+
+.spinner_overlay {
+  background-color: rgba(51, 51, 51, 0.4);
+  backdrop-filter: blur(5px);
+  inset: 0;
+  position: absolute;
+  z-index: 1;
 }

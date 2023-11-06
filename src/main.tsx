@@ -11,9 +11,7 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     errorElement: <ErrorPage></ErrorPage>,
-    /* loader: ({ params: string }) => {
-      return rootLoader(params);
-    }, */
+    /* loader: */
     /* children: [
       {
         path: 'species/:id',

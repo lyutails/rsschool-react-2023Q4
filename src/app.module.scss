@@ -48,6 +48,16 @@ body::-webkit-scrollbar-thumb {
     margin: 0 auto;
     display: flex;
     flex-direction: row;
+    align-items: center;
+  }
+
+  &_logic {
+    width: 50vw;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -86,7 +96,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .card_pic {
-  width: 30vw;
+  width: 20vw;
   aspect-ratio: 1 / 0.8;
   margin: 0 auto;
   background-size: contain;
@@ -103,11 +113,13 @@ body::-webkit-scrollbar-thumb {
 .card_wrapper {
   display: flex;
   flex-direction: row;
-  margin-top: 5px;
-  margin-bottom: 5px;
   border: 1px #333 solid;
   border-radius: 10px;
   padding: 5px;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 
 .card_text {
@@ -131,6 +143,7 @@ body::-webkit-scrollbar-thumb {
   flex: 1 0 auto;
   width: 100%;
   background-color: #333;
+  margin-top: 10px;
 
   &_wrapper {
     display: flex;
@@ -173,6 +186,7 @@ body::-webkit-scrollbar-thumb {
 .pagination_wrapper {
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 10px;
 }
 
 .bottom_section_wrapper {

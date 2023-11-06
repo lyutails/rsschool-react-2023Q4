@@ -20,37 +20,39 @@ export function Header({
   return (
     <div className={style.header}>
       <div className={style.header_wrapper}>
-        <input
-          placeholder="Search..."
-          value={searchValue}
-          className={style.header_input}
-          onChange={(e): void => {
-            changeSearchValue(e.target.value);
-          }}
-        ></input>
-        <button
-          className={style.cross}
-          onClick={() => {
-            localStorage.removeItem('searchValue');
-            changeSearchValue('');
-            fetchSpecies('');
-          }}
-        >
-          cross
-        </button>
-        <button
-          className={style.header_search}
-          onClick={() => {
-            fetchSpecies(searchValue);
-            localStorage.setItem('searchValue', `${searchValue}`);
-          }}
-        ></button>
-        <button
-          className={style.header_error}
-          onClick={() => setHasError(true)}
-        >
-          Get Error
-        </button>
+        <div className={style.header_logic}>
+          <input
+            placeholder="Search..."
+            value={searchValue}
+            className={style.header_input}
+            onChange={(e): void => {
+              changeSearchValue(e.target.value);
+            }}
+          ></input>
+          <button
+            className={style.cross}
+            onClick={() => {
+              localStorage.removeItem('searchValue');
+              changeSearchValue('');
+              fetchSpecies('');
+            }}
+          >
+            cross
+          </button>
+          <button
+            className={style.header_search}
+            onClick={() => {
+              fetchSpecies(searchValue);
+              localStorage.setItem('searchValue', `${searchValue}`);
+            }}
+          ></button>
+          <button
+            className={style.header_error}
+            onClick={() => setHasError(true)}
+          >
+            Get Error
+          </button>
+        </div>
       </div>
       <div className={style.grogu_looking}></div>
     </div>

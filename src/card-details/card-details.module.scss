@@ -8,6 +8,7 @@
   border-radius: 10px;
   text-wrap: wrap;
   margin-left: 10px;
+  z-index: 100;
 }
 
 .card_close {
@@ -25,4 +26,22 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+}
+
+.details_all {
+  height: 100%;
+}
+
+.main_close {
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  inset: 0;
+  background-color: rgba(51, 51, 51, 0.4);
+  z-index: 20;
 }

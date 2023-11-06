@@ -32,25 +32,30 @@ export function CardDetails() {
   }
   return (
     aSpecies !== null && (
-      <div className={style.details_wrapper}>
-        <div className={style.card_top}>
-          <span className={style.card_id}>{id}</span>
-          <NavLink to={`/`} className={style.card_close}>
-            close
-          </NavLink>
+      <div className={style.details_all}>
+        <div className={style.details_wrapper}>
+          <div className={style.card_top}>
+            <span className={style.card_id}>{id}</span>
+            <NavLink to={`/`} className={style.card_close}>
+              close
+            </NavLink>
+          </div>
+          <Details
+            key={aSpecies.url}
+            name={aSpecies.name}
+            classification={aSpecies.classification}
+            designation={aSpecies.designation}
+            average_height={aSpecies.average_height}
+            average_lifespan={aSpecies.average_lifespan}
+            hair_colors={aSpecies.hair_colors}
+            skin_colors={aSpecies.skin_colors}
+            eye_colors={aSpecies.eye_colors}
+            language={aSpecies.language}
+          />
         </div>
-        <Details
-          key={aSpecies.url}
-          name={aSpecies.name}
-          classification={aSpecies.classification}
-          designation={aSpecies.designation}
-          average_height={aSpecies.average_height}
-          average_lifespan={aSpecies.average_lifespan}
-          hair_colors={aSpecies.hair_colors}
-          skin_colors={aSpecies.skin_colors}
-          eye_colors={aSpecies.eye_colors}
-          language={aSpecies.language}
-        />
+        <NavLink to={`/`} className={style.main_close}>
+          <div className={style.overlay}></div>
+        </NavLink>
       </div>
     )
   );

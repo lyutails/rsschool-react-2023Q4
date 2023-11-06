@@ -4,9 +4,11 @@ import { ApiResponseRace } from './api/api';
 
 export type CardSpeciesProps = Omit<ApiResponseRace, 'url'>;
 
-export function Card(props: CardSpeciesProps) {
+export function Card(props: ApiResponseRace) {
+  const id = props.url?.split('/').at(-2) || '';
+  console.log(props.url?.split('/'));
   return (
-    <Link to={`species/${props.name}`}>
+    <Link to={`species/${id}`}>
       <div className={style.card_wrapper}>
         <div className={style.card_fancy}>
           {'>>>'}
@@ -24,16 +26,6 @@ export function Card(props: CardSpeciesProps) {
           <div className={style.card_info}>
             Designation: {props.designation}
           </div>
-          <div className={style.card_info}>
-            Average Height: {props.average_height}
-          </div>
-          <div className={style.card_info}>
-            Hair Colors: {props.hair_colors}
-          </div>
-          <div className={style.card_info}>
-            Skin Colors: {props.skin_colors}
-          </div>
-          <div className={style.card_info}>Eye Colors: {props.eye_colors}</div>
           <div className={style.card_info}>
             Average Lifespan: {props.average_lifespan}
           </div>

@@ -1,44 +1,47 @@
 import style from './card-details.module.scss';
-
-import grogu from '../assets/grogu.png';
-import bb8 from '../assets/droid.png';
-import wookie from '../assets/wookie.png';
-import rodian from '../assets/rodian.png';
-import hutt from '../assets/hutt.png';
-import trandoshan from '../assets/trandoshan.png';
-import moncalamari from '../assets/moncalamari.png';
-import ewok from '../assets/ewok.png';
-import human from '../assets/human.png';
-import sullustan from '../assets/sullustan.png';
-import toydarian from '../assets/toydarian.png';
 import { Card } from '../card';
-import { ApiResponseRace } from '../api/api';
+import { ApiResponseRace, searchASpecies } from '../api/api';
+import { useParams } from 'react-router-dom';
+import { useCallback, useEffect, useState } from 'react';
+import Spinner from '../spinner';
 
-interface Props {
-  species: ApiResponseRace[];
-}
+export function CardDetails() {
+  const { id } = useParams();
+  const [isLoading, setisLoading] = useState(false);
+  const [aSpecies, setASpecies] = useState<ApiResponseRace | null>(null);
 
-const speciesPics: Record<string, string> = {
-  "Yoda's species": grogu,
-  Droid: bb8,
-  Wookie: wookie,
-  Human: human,
-  Rodian: rodian,
-  Hutt: hutt,
-  Trandoshan: trandoshan,
-  'Mon Calamari': moncalamari,
-  Ewok: ewok,
-  Sullustan: sullustan,
-  Toydarian: toydarian,
-};
+  const fetchSpecies = useCallback(async (id: number) => {
+    setisLoading(true);
+    if (id === undefined) {
+      throw new Error('no id found');
+    }
+    const data = await searchASpecies(+id);
+    console.log(data);
+    setASpecies(data);
+    setisLoading(false);
+  }, []);
 
-export function CardDetails(props: Props) {
+  useEffect(() => {
+    if (id === undefined) {
+      throw new Error('no id found');
+    }
+    fetchSpecies(+id);
+  }, [fetchSpecies, id]);
+
+  //   if(aSpecies === null) {
+  //     throw new Error('one species is possibly null')
+  //   }
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
   return (
-    <div className={style.content_wrapper}>
-      {props.species.map((aSpecies) => (
+    aSpecies !== null && (
+      <div className={style.content_wrapper}>
+        {id}
         <Card
           key={aSpecies.url}
-          image={speciesPics[aSpecies.name]}
           name={aSpecies.name}
           classification={aSpecies.classification}
           designation={aSpecies.designation}
@@ -49,7 +52,7 @@ export function CardDetails(props: Props) {
           eye_colors={aSpecies.eye_colors}
           language={aSpecies.language}
         />
-      ))}
-    </div>
+      </div>
+    )
   );
 }

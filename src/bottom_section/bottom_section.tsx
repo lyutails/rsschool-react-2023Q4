@@ -47,6 +47,7 @@ export function BottomSection(props: Props) {
           skin_colors={aSpecies.skin_colors}
           eye_colors={aSpecies.eye_colors}
           language={aSpecies.language}
+          url={aSpecies.url}
         />
       ))}
     </div>

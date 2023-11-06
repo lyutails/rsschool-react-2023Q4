@@ -5,6 +5,7 @@ import ErrorBoundary from './error_boundary';
 import { App } from './app';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import ErrorPage from './error-page/error-page';
+import { CardDetails } from './card-details/card-details';
 
 const router = createBrowserRouter([
   {
@@ -12,12 +13,12 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage></ErrorPage>,
     /* loader: */
-    /* children: [
+    children: [
       {
         path: 'species/:id',
-        element: <CardDetails species={species} />,
+        element: <CardDetails />,
       },
-    ], */
+    ],
   },
 ]);
 

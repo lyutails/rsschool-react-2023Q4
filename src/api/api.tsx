@@ -35,3 +35,8 @@ export async function searchSpecies(
   );
   return await response.json();
 }
+
+export async function searchASpecies(id: number) {
+  const response = await fetch(`${path}${id}/`);
+  return await response.json();
+}

@@ -12,8 +12,6 @@ interface Props {
 
 export function PaginationButtons({
   page,
-  changePageMinus,
-  changePagePlus,
   changePage,
   totalCount,
   search,
@@ -25,25 +23,8 @@ export function PaginationButtons({
     <div className={style.pagination_wrapper}>
       <button
         onClick={() => {
-          changePageMinus();
-        }}
-      >
-        previous
-      </button>
-      <div>
-        {page}/{maxPage}
-      </div>
-      <button
-        onClick={() => {
-          changePagePlus();
-        }}
-      >
-        next
-      </button>
-      <button
-        onClick={() => {
           page > minPage && changePage(page - 1);
-          if (search !== '') {
+          if (search !== '' && page > minPage) {
             navigate(`/page/${page - 1}/search/${search}`);
           } else {
             navigate(`/page/${page - 1}`);
@@ -58,7 +39,7 @@ export function PaginationButtons({
       <button
         onClick={() => {
           page < maxPage && changePage(page + 1);
-          if (search !== '') {
+          if (search !== '' && page < maxPage) {
             navigate(`/page/${page + 1}/search/${search}`);
           } else {
             navigate(`/page/${page + 1}`);

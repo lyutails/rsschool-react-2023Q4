@@ -13,8 +13,6 @@ export function HeroPage() {
 
   const query = querySearch ? querySearch : '';
 
-  console.log(query);
-
   const inputValueLocal = localStorage.getItem('searchValue');
   const [species, setSpecies] = useState<ApiResponseRace[]>([]);
   const [searchValue, setSearchValue] = useState(

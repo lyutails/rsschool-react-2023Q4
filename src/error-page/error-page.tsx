@@ -3,7 +3,6 @@ import style from './error-page.module.scss';
 
 export default function ErrorPage() {
   const error = useRouteError();
-  console.log(error);
 
   if (isRouteErrorResponse(error)) {
     return (

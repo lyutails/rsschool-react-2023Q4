@@ -1,4 +1,5 @@
 import {
+  Outlet,
   Route,
   RouterProvider,
   createBrowserRouter,
@@ -8,10 +9,25 @@ import { HeroPage } from './hero_page/hero_page';
 import ErrorPage from './error-page/error-page';
 import { CardDetails } from './card-details/card-details';
 
+function Layout() {
+  return (
+    <>
+      <Outlet />
+    </>
+  );
+}
+
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<HeroPage />} errorElement={<ErrorPage />}>
-      <Route path="species/:id" element={<CardDetails />}></Route>
+    <Route path="/" element={<Layout />}>
+      <Route path="/" element={<HeroPage />} errorElement={<ErrorPage />}>
+        <Route path="/:params/species/:id" element={<CardDetails />}></Route>
+      </Route>
+      <Route
+        path="/:params"
+        element={<HeroPage />}
+        errorElement={<ErrorPage />}
+      />
     </Route>
   )
 );

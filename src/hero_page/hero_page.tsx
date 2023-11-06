@@ -48,7 +48,11 @@ export function HeroPage() {
         changePage={(roma: number) => setPage(roma)}
         totalCount={countSpecies}
       ></PaginationButtons>
-      {isLoading ? <Spinner /> : <BottomSection species={species} />}
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <BottomSection species={species} page={page} />
+      )}
       <Footer />
     </div>
   );

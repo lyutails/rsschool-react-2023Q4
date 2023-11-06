@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import style from '../app.module.scss';
 
 interface Props {
@@ -17,6 +18,7 @@ export function PaginationButtons({
 }: Props) {
   const maxPage = Math.ceil(totalCount / 10);
   const minPage = 1;
+  const navigate = useNavigate();
   return (
     <div className={style.pagination_wrapper}>
       <button
@@ -39,6 +41,7 @@ export function PaginationButtons({
       <button
         onClick={() => {
           page > minPage && changePage(page - 1);
+          navigate(`/page=${page - 1}`);
         }}
       >
         previous
@@ -49,6 +52,7 @@ export function PaginationButtons({
       <button
         onClick={() => {
           page < maxPage && changePage(page + 1);
+          navigate(`/page=${page + 1}`);
         }}
       >
         next

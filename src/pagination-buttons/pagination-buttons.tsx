@@ -38,11 +38,7 @@ export function PaginationButtons({
       </button>
       <button
         onClick={() => {
-          //   if (page !== 1) {
-          //     changePage(page - 1);
-          //   }
           page > minPage && changePage(page - 1);
-          // changePage(page === 1 ? 1 : page - 1);
         }}
       >
         previous

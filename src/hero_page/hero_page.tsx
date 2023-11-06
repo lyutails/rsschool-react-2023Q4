@@ -20,12 +20,9 @@ export function HeroPage() {
   const fetchSpecies = useCallback(
     async (inputValue: string) => {
       setisLoading(true);
-      // const results = (await searchSpecies(inputValue, page)).results;
-      // const { results } = await searchSpecies(inputValue, page);
       const data = await searchSpecies(inputValue, page);
       const species = data.results;
       const speciesCount = data.count;
-      //console.log(species);
       setSpecies(species);
       setCountSpecies(speciesCount);
       setisLoading(false);
@@ -48,7 +45,6 @@ export function HeroPage() {
         page={page}
         changePageMinus={() => setPage(page - 1)}
         changePagePlus={() => setPage(page + 1)}
-        // changePage={setPage}
         changePage={(roma: number) => setPage(roma)}
         totalCount={countSpecies}
       ></PaginationButtons>

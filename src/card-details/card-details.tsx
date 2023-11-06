@@ -28,10 +28,6 @@ export function CardDetails() {
     fetchSpecies(+id);
   }, [fetchSpecies, id]);
 
-  //   if(aSpecies === null) {
-  //     throw new Error('one species is possibly null')
-  //   }
-
   if (isLoading) {
     return <Spinner />;
   }

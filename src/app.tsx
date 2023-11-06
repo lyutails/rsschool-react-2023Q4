@@ -3,10 +3,6 @@ import { HeroPage } from './hero_page/hero_page';
 import ErrorPage from './error-page/error-page';
 import { CardDetails } from './card-details/card-details';
 
-/* export function App() {
-  return <HeroPage />;
-} */
-
 export function App() {
   return (
     <BrowserRouter>
@@ -17,5 +13,4 @@ export function App() {
       </Routes>
     </BrowserRouter>
   );
-  return <HeroPage />;
 }

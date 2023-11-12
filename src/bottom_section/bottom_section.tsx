@@ -10,6 +10,7 @@ interface Props {
 }
 
 export function BottomSection(props: Props) {
+  alert('would be thankful if you check me later on Tuesday');
   return (
     <div className={style.bottom_section_wrapper}>
       <div className={style.content_wrapper}>

@@ -1,25 +1,27 @@
 import { Card } from '../card';
 import style from '../app.module.scss';
-import { ApiResponseRace } from '../api/api';
 import { Outlet } from 'react-router-dom';
+import { useContext } from 'react';
+import {
+  PageContext,
+  SearchContext,
+  SpeciesContext,
+} from '../hero_page/hero_page';
 
-interface Props {
-  species: ApiResponseRace[];
-  page: number;
-  search: string;
-}
-
-export function BottomSection(props: Props) {
+export function BottomSection() {
+  const species = useContext(SpeciesContext);
+  const page = useContext(PageContext);
+  const search = useContext(SearchContext);
   return (
     <div className={style.bottom_section_wrapper}>
       <div className={style.content_wrapper}>
-        {props.species.map((aSpecies) => {
+        {species.map((aSpecies) => {
           return (
             <Card
               key={aSpecies.url}
               species={aSpecies}
-              page={props.page}
-              search={props.search}
+              page={page}
+              search={search}
             />
           );
         })}

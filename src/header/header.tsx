@@ -1,20 +1,17 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import style from '../app.module.scss';
 import { useNavigate } from 'react-router-dom';
+import { SearchContext } from '../hero_page/hero_page';
 
 interface Props {
-  searchValue: string;
   fetchSpecies: (inputValue: string) => void;
   changeSearchValue: (data: string) => void;
   changePage: (data: number) => void;
 }
 
-export function Header({
-  searchValue,
-  fetchSpecies,
-  changeSearchValue,
-  changePage,
-}: Props) {
+export function Header({ fetchSpecies, changeSearchValue, changePage }: Props) {
+  const search = useContext(SearchContext);
+
   const [hasError, setHasError] = useState<boolean>(false);
   const navigate = useNavigate();
 
@@ -27,7 +24,7 @@ export function Header({
         <div className={style.header_logic}>
           <input
             placeholder="Search..."
-            value={searchValue}
+            value={search}
             className={style.header_input}
             onChange={(e): void => {
               changeSearchValue(e.target.value);
@@ -54,9 +51,14 @@ export function Header({
             cross
           </button>
           <button
+            value={search}
             className={style.header_search}
             onClick={() => {
-              fetchSpecies(searchValue);
+              /* changeSearchValue(e.target.value);
+              e.target.value.length
+                ? localStorage.setItem('searchValue', `${e.target.value}`)
+                : localStorage.removeItem('searchValue'); */
+              fetchSpecies(search);
             }}
           ></button>
           <button

@@ -49,7 +49,6 @@ export function HeroPage() {
         <SearchContext.Provider value={searchValue}>
           <div className={style.main_wrapper}>
             <Header
-              searchValue={searchValue}
               fetchSpecies={(inputValue) => fetchSpecies(inputValue)}
               changeSearchValue={setSearchValue}
               changePage={setPage}

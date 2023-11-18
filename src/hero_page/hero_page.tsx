@@ -7,6 +7,8 @@ import { Header } from '../header/header';
 import { PaginationButtons } from '../pagination-buttons/pagination-buttons';
 import Spinner from '../spinner';
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '../state_management/store';
 
 export const SpeciesContext = createContext<ApiResponseRace[]>([]);
 export const PageContext = createContext<number>(1);
@@ -17,14 +19,18 @@ export function HeroPage() {
 
   const query = querySearch ? querySearch : '';
 
-  const inputValueLocal = localStorage.getItem('searchValue');
+  const userInputValue = useSelector((state: RootState) => state.search.value);
+
   const [species, setSpecies] = useState<ApiResponseRace[]>([]);
   const [searchValue, setSearchValue] = useState(
-    inputValueLocal ? inputValueLocal : query
+    userInputValue !== '' ? userInputValue : query
   );
   const [isLoading, setisLoading] = useState(false);
   const [page, setPage] = useState(pageNumber ? +pageNumber : 1);
   const [countSpecies, setCountSpecies] = useState(0);
+
+  /* const pageCount = useSelector((state: RootState) => state.counter.value);
+  const dispatch = useDispatch(); */
 
   const fetchSpecies = useCallback(
     async (searchValue: string) => {

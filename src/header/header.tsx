@@ -1,20 +1,15 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import style from '../app.module.scss';
 import { useNavigate } from 'react-router-dom';
-import { SearchContext } from '../hero_page/hero_page';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../state_management/store';
 import { makeSearch, clearSearch } from '../state_management/searchSlice';
 
 interface Props {
-  fetchSpecies: (inputValue: string) => void;
-  changeSearchValue: (data: string) => void;
   changePage: (data: number) => void;
 }
 
-export function Header({ fetchSpecies, changeSearchValue, changePage }: Props) {
-  const search = useContext(SearchContext);
-
+export function Header({ changePage }: Props) {
   const [hasError, setHasError] = useState<boolean>(false);
   const navigate = useNavigate();
 
@@ -33,19 +28,11 @@ export function Header({ fetchSpecies, changeSearchValue, changePage }: Props) {
           <div className={style.header_input_wrapper}>
             <input
               placeholder="Search..."
-              value={search}
+              value={userSearch}
               className={style.header_input}
               onChange={(e): void => {
-                changeSearchValue(e.target.value);
                 setUserSearch(e.target.value);
-                e.target.value.length
-                  ? dispatch(makeSearch(e.target.value))
-                  : dispatch(clearSearch());
-                changePage(1);
-                const query = e.target.value.length
-                  ? `/page/1/search/${e.target.value}`
-                  : `/page/1`;
-                navigate(query);
+                // dispatch(makeSearch(e.target.value))
               }}
             ></input>
             <div className={style.header_under_input}>
@@ -56,8 +43,8 @@ export function Header({ fetchSpecies, changeSearchValue, changePage }: Props) {
             className={style.cross}
             onClick={() => {
               dispatch(clearSearch());
-              changeSearchValue('');
-              fetchSpecies('');
+              setUserSearch('');
+              // fetchSpecies('');
               changePage(1);
               navigate(`/page/1`);
             }}
@@ -65,11 +52,18 @@ export function Header({ fetchSpecies, changeSearchValue, changePage }: Props) {
             Cross
           </button>
           <button
-            value={search}
+            value={userSearch}
             className={style.header_search}
             onClick={() => {
-              dispatch(makeSearch(userSearch));
               // fetchSpecies(search);
+              userSearch.length
+                ? dispatch(makeSearch(userSearch))
+                : dispatch(clearSearch());
+              changePage(1);
+              const query = userInputValue.length
+                ? `/page/1/search/${userInputValue}`
+                : `/page/1`;
+              navigate(query);
             }}
           >
             Search/Save

@@ -1,5 +1,5 @@
-import { createContext, useCallback, useEffect, useState } from 'react';
-import { ApiResponseRace, searchSpecies } from '../api/api';
+import { createContext, useEffect, useState } from 'react';
+import { ApiResponseRace } from '../api/api';
 import style from '../app.module.scss';
 import { BottomSection } from '../bottom_section/bottom_section';
 import { Footer } from '../footer/footer';
@@ -9,6 +9,7 @@ import Spinner from '../spinner';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../state_management/store';
+import { useGetSpeciesQuery } from '../api/api';
 
 export const SpeciesContext = createContext<ApiResponseRace[]>([]);
 export const PageContext = createContext<number>(1);
@@ -22,55 +23,46 @@ export function HeroPage() {
   const userInputValue = useSelector((state: RootState) => state.search.value);
 
   const [species, setSpecies] = useState<ApiResponseRace[]>([]);
-  const [searchValue, setSearchValue] = useState(
-    userInputValue !== '' ? userInputValue : query
-  );
-  const [isLoading, setisLoading] = useState(false);
+
   const [page, setPage] = useState(pageNumber ? +pageNumber : 1);
   const [countSpecies, setCountSpecies] = useState(0);
 
-  /* const pageCount = useSelector((state: RootState) => state.counter.value);
-  const dispatch = useDispatch(); */
-
-  const fetchSpecies = useCallback(
-    async (searchValue: string) => {
-      setisLoading(true);
-      const data = await searchSpecies(searchValue, page);
-      const species = data.results;
-      const speciesCount = data.count;
-      setSpecies(species);
-      setCountSpecies(speciesCount);
-      setisLoading(false);
-    },
-    [page]
-  );
+  const { data, error, isLoading } = useGetSpeciesQuery({
+    pageNumber: page,
+    querySearch: userInputValue !== '' ? userInputValue : query,
+  });
+  console.log(data);
+  if (error) {
+    throw new Error(
+      'smth went wrong while trying to fetch species with rtk query'
+    );
+  }
 
   useEffect(() => {
-    fetchSpecies(searchValue);
-  }, [fetchSpecies, searchValue]);
+    if (data?.results !== undefined) {
+      setSpecies(data?.results);
+    }
+    if (data?.count !== undefined) {
+      setCountSpecies(data?.count);
+    }
+  }, [data?.count, data?.results]);
 
   return (
     <PageContext.Provider value={page}>
       <SpeciesContext.Provider value={species}>
-        <SearchContext.Provider value={searchValue}>
-          <div className={style.main_wrapper}>
-            <Header
-              fetchSpecies={(inputValue) => fetchSpecies(inputValue)}
-              changeSearchValue={setSearchValue}
-              changePage={setPage}
-            />
-            <PaginationButtons
-              page={page}
-              changePageMinus={() => setPage(page - 1)}
-              changePagePlus={() => setPage(page + 1)}
-              changePage={(roma: number) => setPage(roma)}
-              totalCount={countSpecies}
-              search={searchValue}
-            ></PaginationButtons>
-            {isLoading ? <Spinner /> : <BottomSection />}
-            <Footer />
-          </div>
-        </SearchContext.Provider>
+        <div className={style.main_wrapper}>
+          <Header changePage={setPage} />
+          <PaginationButtons
+            page={page}
+            changePageMinus={() => setPage(page - 1)}
+            changePagePlus={() => setPage(page + 1)}
+            changePage={(roma: number) => setPage(roma)}
+            totalCount={countSpecies}
+            search={userInputValue}
+          ></PaginationButtons>
+          {isLoading ? <Spinner /> : <BottomSection />}
+          <Footer />
+        </div>
       </SpeciesContext.Provider>
     </PageContext.Provider>
   );

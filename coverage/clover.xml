@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1700488448043" clover="3.2.0">
-  <project timestamp="1700488448043" name="All files">
-    <metrics statements="837" coveredstatements="527" conditionals="28" coveredconditionals="11" methods="31" coveredmethods="10" elements="896" coveredelements="548" complexity="0" loc="837" ncloc="837" packages="11" files="19" classes="19"/>
+<coverage generated="1700491783362" clover="3.2.0">
+  <project timestamp="1700491783363" name="All files">
+    <metrics statements="837" coveredstatements="534" conditionals="28" coveredconditionals="12" methods="31" coveredmethods="11" elements="896" coveredelements="557" complexity="0" loc="837" ncloc="837" packages="11" files="19" classes="19"/>
     <package name="src">
       <metrics statements="263" coveredstatements="178" conditionals="5" coveredconditionals="3" methods="6" coveredmethods="3"/>
       <file name="app.tsx" path="L:\Just Me\Learning\Frontend\React\rsschool-react-2023Q4\src\app.tsx">
@@ -531,16 +531,16 @@
       </file>
     </package>
     <package name="src.fallbackUI">
-      <metrics statements="7" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="fallbackUI.tsx" path="L:\Just Me\Learning\Frontend\React\rsschool-react-2023Q4\src\fallbackUI\fallbackUI.tsx">
-        <metrics statements="7" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
+        <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.footer">

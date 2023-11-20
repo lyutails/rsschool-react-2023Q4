@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from './counterSlice';
-import speciesReducer from './speciesSlice';
 import searchSlice from './searchSlice';
+import loadingReducer from './loadingSlice';
 import { aSpeciesApi, speciesApi } from '../api/api';
 import { setupListeners } from '@reduxjs/toolkit/query';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    species: speciesReducer,
+    loading: loadingReducer,
     search: searchSlice,
     [speciesApi.reducerPath]: speciesApi.reducer,
     [aSpeciesApi.reducerPath]: aSpeciesApi.reducer,

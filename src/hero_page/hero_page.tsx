@@ -57,7 +57,6 @@ export function HeroPage() {
     }
     setLoading(isLoading);
     dispatch(getLoading(loading));
-    console.log(loadingValue);
   }, [
     countSpecies,
     data?.count,

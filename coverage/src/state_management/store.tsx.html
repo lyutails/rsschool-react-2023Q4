@@ -23,27 +23,27 @@
         </h1>
         <div class="clearfix">
           <div class="fl pad1y space-right2">
-            <span class="strong">0% </span>
+            <span class="strong">100% </span>
             <span class="quiet">Statements</span>
-            <span class="fraction">0/26</span>
+            <span class="fraction">26/26</span>
           </div>
 
           <div class="fl pad1y space-right2">
-            <span class="strong">0% </span>
+            <span class="strong">100% </span>
             <span class="quiet">Branches</span>
-            <span class="fraction">0/1</span>
+            <span class="fraction">1/1</span>
           </div>
 
           <div class="fl pad1y space-right2">
-            <span class="strong">0% </span>
+            <span class="strong">100% </span>
             <span class="quiet">Functions</span>
-            <span class="fraction">0/1</span>
+            <span class="fraction">1/1</span>
           </div>
 
           <div class="fl pad1y space-right2">
-            <span class="strong">0% </span>
+            <span class="strong">100% </span>
             <span class="quiet">Lines</span>
-            <span class="fraction">0/26</span>
+            <span class="fraction">26/26</span>
           </div>
         </div>
         <p class="quiet">
@@ -57,7 +57,7 @@
           </div>
         </template>
       </div>
-      <div class="status-line low"></div>
+      <div class="status-line high"></div>
       <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -85,58 +85,58 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { configureStore } from '@reduxjs/toolkit';</span></span></span>
-<span class="cstat-no" title="statement not covered" >import counterReducer from './counterSlice';</span>
-<span class="cstat-no" title="statement not covered" >import searchSlice from './searchSlice';</span>
-<span class="cstat-no" title="statement not covered" >import loadingReducer from './loadingSlice';</span>
-<span class="cstat-no" title="statement not covered" >import { aSpeciesApi, speciesApi } from '../api/api';</span>
-<span class="cstat-no" title="statement not covered" >import { setupListeners } from '@reduxjs/toolkit/query';</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export const store = configureStore({</span>
-<span class="cstat-no" title="statement not covered" >  reducer: {</span>
-<span class="cstat-no" title="statement not covered" >    counter: counterReducer,</span>
-<span class="cstat-no" title="statement not covered" >    loading: loadingReducer,</span>
-<span class="cstat-no" title="statement not covered" >    search: searchSlice,</span>
-<span class="cstat-no" title="statement not covered" >    [speciesApi.reducerPath]: speciesApi.reducer,</span>
-<span class="cstat-no" title="statement not covered" >    [aSpeciesApi.reducerPath]: aSpeciesApi.reducer,</span>
-<span class="cstat-no" title="statement not covered" >  },</span>
-<span class="cstat-no" title="statement not covered" >  middleware: (getDefaultMiddleware) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    getDefaultMiddleware().concat(</span>
-<span class="cstat-no" title="statement not covered" >      speciesApi.middleware,</span>
-<span class="cstat-no" title="statement not covered" >      aSpeciesApi.middleware</span>
-<span class="cstat-no" title="statement not covered" >    ),</span>
-<span class="cstat-no" title="statement not covered" >});</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >setupListeners(store.dispatch);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export type RootState = ReturnType&lt;typeof store.getState&gt;;</span>
-<span class="cstat-no" title="statement not covered" >export type AppDispatch = typeof store.dispatch;</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { configureStore } from '@reduxjs/toolkit';
+import counterReducer from './counterSlice';
+import searchSlice from './searchSlice';
+import loadingReducer from './loadingSlice';
+import { aSpeciesApi, speciesApi } from '../api/api';
+import { setupListeners } from '@reduxjs/toolkit/query';
+&nbsp;
+export const store = configureStore({
+  reducer: {
+    counter: counterReducer,
+    loading: loadingReducer,
+    search: searchSlice,
+    [speciesApi.reducerPath]: speciesApi.reducer,
+    [aSpeciesApi.reducerPath]: aSpeciesApi.reducer,
+  },
+  middleware: (getDefaultMiddleware) =&gt;
+    getDefaultMiddleware().concat(
+      speciesApi.middleware,
+      aSpeciesApi.middleware
+    ),
+});
+&nbsp;
+setupListeners(store.dispatch);
+&nbsp;
+export type RootState = ReturnType&lt;typeof store.getState&gt;;
+export type AppDispatch = typeof store.dispatch;
 &nbsp;</pre></td></tr></table></pre>
 
       <div class="push"></div>
@@ -151,7 +151,7 @@
         rel="noopener noreferrer"
         >istanbul</a
       >
-      at 2023-11-20T08:24:27.257Z
+      at 2023-11-20T13:54:08.011Z
     </div>
     <script src="../../prettify.js"></script>
     <script>

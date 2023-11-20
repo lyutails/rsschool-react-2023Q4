@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const path = 'https://swapi.dev/api/species/';
 const pathRTK = 'https://swapi.dev/api/';
 
 export interface ApiResponseRace {
@@ -30,23 +29,9 @@ export interface ApiResponse {
 }
 
 export interface SearchParams {
-  pageNumber: number;
-  querySearch: string;
-}
-
-export async function searchSpecies(
-  searchParam: string,
-  page: number
-): Promise<ApiResponse> {
-  const response = await fetch(
-    `${path}?page=${page}${searchParam ? `&search=${searchParam}` : ''}`
-  );
-  return await response.json();
-}
-
-export async function searchASpecies(id: number) {
-  const response = await fetch(`${path}${id}/`);
-  return await response.json();
+  pageNumber?: number;
+  querySearch?: string;
+  id?: string;
 }
 
 export const speciesApi = createApi({
@@ -63,9 +48,25 @@ export const speciesApi = createApi({
           method: 'GET',
         };
       },
-      //transformResponse: (response: ApiResponse) => response.results,
+    }),
+  }),
+});
+
+export const aSpeciesApi = createApi({
+  reducerPath: 'aSpeciesApi',
+  baseQuery: fetchBaseQuery({ baseUrl: pathRTK }),
+  endpoints: (builder) => ({
+    getASpecies: builder.query<ApiResponseRace, SearchParams>({
+      query: (params) => {
+        const { id } = params;
+        return {
+          url: `species/${id}`,
+          method: 'GET',
+        };
+      },
     }),
   }),
 });
 
 export const { useGetSpeciesQuery } = speciesApi;
+export const { useGetASpeciesQuery } = aSpeciesApi;

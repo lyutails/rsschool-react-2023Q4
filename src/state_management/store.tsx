@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from './counterSlice';
 import speciesReducer from './speciesSlice';
 import searchSlice from './searchSlice';
-import { speciesApi } from '../api/api';
+import { aSpeciesApi, speciesApi } from '../api/api';
 import { setupListeners } from '@reduxjs/toolkit/query';
 
 export const store = configureStore({
@@ -11,9 +11,13 @@ export const store = configureStore({
     species: speciesReducer,
     search: searchSlice,
     [speciesApi.reducerPath]: speciesApi.reducer,
+    [aSpeciesApi.reducerPath]: aSpeciesApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(speciesApi.middleware),
+    getDefaultMiddleware().concat(
+      speciesApi.middleware,
+      aSpeciesApi.middleware
+    ),
 });
 
 setupListeners(store.dispatch);

@@ -31,7 +31,6 @@ export function HeroPage() {
     pageNumber: page,
     querySearch: userInputValue !== '' ? userInputValue : query,
   });
-  console.log(data);
   if (error) {
     throw new Error(
       'smth went wrong while trying to fetch species with rtk query'

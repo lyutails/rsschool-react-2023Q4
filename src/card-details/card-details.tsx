@@ -54,7 +54,7 @@ export function CardDetails() {
             language={aSpecies.language}
           />
         </div>
-        <Link to={`/`} className={style.main_close}>
+        <Link data-testid="link" to={`/`} className={style.main_close}>
           <div className={style.overlay}></div>
         </Link>
       </div>

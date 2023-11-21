@@ -23,27 +23,27 @@
         </h1>
         <div class="clearfix">
           <div class="fl pad1y space-right2">
-            <span class="strong">88.88% </span>
+            <span class="strong">100% </span>
             <span class="quiet">Statements</span>
-            <span class="fraction">64/72</span>
+            <span class="fraction">72/72</span>
+          </div>
+
+          <div class="fl pad1y space-right2">
+            <span class="strong">80% </span>
+            <span class="quiet">Branches</span>
+            <span class="fraction">4/5</span>
           </div>
 
           <div class="fl pad1y space-right2">
             <span class="strong">100% </span>
-            <span class="quiet">Branches</span>
-            <span class="fraction">3/3</span>
-          </div>
-
-          <div class="fl pad1y space-right2">
-            <span class="strong">75% </span>
             <span class="quiet">Functions</span>
-            <span class="fraction">3/4</span>
+            <span class="fraction">4/4</span>
           </div>
 
           <div class="fl pad1y space-right2">
-            <span class="strong">88.88% </span>
+            <span class="strong">100% </span>
             <span class="quiet">Lines</span>
-            <span class="fraction">64/72</span>
+            <span class="fraction">72/72</span>
           </div>
         </div>
         <p class="quiet">
@@ -171,34 +171,34 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -244,15 +244,15 @@ export const speciesApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: pathRTK }),
   endpoints: (builder) =&gt; ({
     getSpecies: builder.query&lt;ApiResponse, SearchParams&gt;({
-      query: <span class="fstat-no" title="function not covered" >(params) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const { pageNumber, querySearch } = params;</span>
-<span class="cstat-no" title="statement not covered" >        return {</span>
-<span class="cstat-no" title="statement not covered" >          url: `species?page=${pageNumber}${</span>
-<span class="cstat-no" title="statement not covered" >            querySearch ? `&amp;search=${querySearch}` : ''</span>
-<span class="cstat-no" title="statement not covered" >          }`,</span>
-<span class="cstat-no" title="statement not covered" >          method: 'GET',</span>
-<span class="cstat-no" title="statement not covered" >        };</span>
-<span class="cstat-no" title="statement not covered" >      },</span>
+      query: (params) =&gt; {
+        const { pageNumber, querySearch } = params;
+        return {
+          url: `species?page=${pageNumber}${
+<span class="branch-0 cbranch-no" title="branch not covered" >            querySearch ? `&amp;search=${querySearch}` : '</span>'
+          }`,
+          method: 'GET',
+        };
+      },
     }),
   }),
 });
@@ -289,7 +289,7 @@ export const { useGetASpeciesQuery } = aSpeciesApi;
         rel="noopener noreferrer"
         >istanbul</a
       >
-      at 2023-11-21T11:57:17.852Z
+      at 2023-11-21T14:46:53.987Z
     </div>
     <script src="../../prettify.js"></script>
     <script>

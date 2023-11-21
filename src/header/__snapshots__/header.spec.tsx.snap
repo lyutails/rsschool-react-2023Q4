@@ -1,0 +1,154 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`check what is going on in header > The component UI should not change 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="_header_bf677c"
+      >
+        <div
+          class="_header_wrapper_bf677c"
+        >
+          <div
+            class="_header_logic_bf677c"
+          >
+            <div
+              class="_header_input_wrapper_bf677c"
+            >
+              <input
+                class="_header_input_bf677c"
+                placeholder="Search..."
+                value=""
+              />
+              <div
+                class="_header_under_input_bf677c"
+              >
+                Save to store: 
+              </div>
+            </div>
+            <button
+              class="_cross_bf677c"
+            >
+              Cross
+            </button>
+            <button
+              class="_header_search_bf677c"
+              value=""
+            >
+              Search and Save
+            </button>
+            <button
+              class="_header_error_bf677c"
+            >
+              Get Error
+            </button>
+          </div>
+        </div>
+        <div
+          class="_grogu_looking_bf677c"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="_header_bf677c"
+    >
+      <div
+        class="_header_wrapper_bf677c"
+      >
+        <div
+          class="_header_logic_bf677c"
+        >
+          <div
+            class="_header_input_wrapper_bf677c"
+          >
+            <input
+              class="_header_input_bf677c"
+              placeholder="Search..."
+              value=""
+            />
+            <div
+              class="_header_under_input_bf677c"
+            >
+              Save to store: 
+            </div>
+          </div>
+          <button
+            class="_cross_bf677c"
+          >
+            Cross
+          </button>
+          <button
+            class="_header_search_bf677c"
+            value=""
+          >
+            Search and Save
+          </button>
+          <button
+            class="_header_error_bf677c"
+          >
+            Get Error
+          </button>
+        </div>
+      </div>
+      <div
+        class="_grogu_looking_bf677c"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

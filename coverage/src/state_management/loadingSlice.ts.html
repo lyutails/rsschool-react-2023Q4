@@ -23,27 +23,27 @@
         </h1>
         <div class="clearfix">
           <div class="fl pad1y space-right2">
-            <span class="strong">90% </span>
+            <span class="strong">100% </span>
             <span class="quiet">Statements</span>
-            <span class="fraction">18/20</span>
+            <span class="fraction">20/20</span>
           </div>
 
           <div class="fl pad1y space-right2">
             <span class="strong">100% </span>
             <span class="quiet">Branches</span>
-            <span class="fraction">0/0</span>
+            <span class="fraction">1/1</span>
           </div>
 
           <div class="fl pad1y space-right2">
-            <span class="strong">0% </span>
+            <span class="strong">100% </span>
             <span class="quiet">Functions</span>
-            <span class="fraction">0/1</span>
+            <span class="fraction">1/1</span>
           </div>
 
           <div class="fl pad1y space-right2">
-            <span class="strong">90% </span>
+            <span class="strong">100% </span>
             <span class="quiet">Lines</span>
-            <span class="fraction">18/20</span>
+            <span class="fraction">20/20</span>
           </div>
         </div>
         <p class="quiet">
@@ -91,8 +91,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -110,9 +110,9 @@ export const loadingSlice = createSlice({
   name: 'loading',
   initialState,
   reducers: {
-    getLoading: <span class="fstat-no" title="function not covered" >(state, action: PayloadAction&lt;boolean&gt;) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      state.value = action.payload;</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
+    getLoading: (state, action: PayloadAction&lt;boolean&gt;) =&gt; {
+      state.value = action.payload;
+    },
   },
 });
 &nbsp;
@@ -133,7 +133,7 @@ export default loadingSlice.reducer;
         rel="noopener noreferrer"
         >istanbul</a
       >
-      at 2023-11-21T11:57:17.852Z
+      at 2023-11-21T14:46:53.987Z
     </div>
     <script src="../../prettify.js"></script>
     <script>

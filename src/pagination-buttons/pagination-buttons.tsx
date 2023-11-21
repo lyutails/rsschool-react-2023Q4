@@ -3,8 +3,8 @@ import style from '../app.module.scss';
 
 interface Props {
   page: number;
-  changePageMinus: () => void;
-  changePagePlus: () => void;
+  changePageMinus?: () => void;
+  changePagePlus?: () => void;
   changePage: (data: number) => void;
   totalCount: number;
   search: string;

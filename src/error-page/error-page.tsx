@@ -9,9 +9,9 @@ export default function ErrorPage() {
       <div id="error-page" className={style.error}>
         <div className={style.error_wrapper}>
           <div className={style.error_message}>
-            <div className={style.error_text}>
+            <h3 className={style.error_text}>
               Smth definitely went wrong on the way, try another route.
-            </div>
+            </h3>
             <div className={style.error_status}>{error.status}</div>
             <div className={style.error_statustext}>{error.statusText}</div>
             {error.data?.message && <p>{error.data.message}</p>}

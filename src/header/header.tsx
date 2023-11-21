@@ -66,7 +66,7 @@ export function Header({ changePage }: Props) {
               navigate(query);
             }}
           >
-            Search/Save
+            Search and Save
           </button>
           <button
             className={style.header_error}

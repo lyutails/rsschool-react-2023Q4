@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { FallbackUI } from './fallbackUI/fallbackUI';
+import { FallbackUI } from '../fallbackUI/fallbackUI';
 
 interface Props {
   children?: ReactNode;

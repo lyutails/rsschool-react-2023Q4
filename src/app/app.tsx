@@ -5,9 +5,9 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import { HeroPage } from './hero_page/hero_page';
-import ErrorPage from './error-page/error-page';
-import { CardDetails } from './card-details/card-details';
+import { HeroPage } from '../hero_page/hero_page';
+import ErrorPage from '../error-page/error-page';
+import { CardDetails } from '../card-details/card-details';
 
 function Layout() {
   return (

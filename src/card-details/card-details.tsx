@@ -2,7 +2,7 @@ import style from './card-details.module.scss';
 import { ApiResponseRace, useGetASpeciesQuery } from '../api/api';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Spinner from '../spinner';
+import Spinner from '../spinner/spinner';
 import { Details } from './details';
 
 export function CardDetails() {

@@ -1,5 +1,5 @@
-import { Card } from '../card';
-import style from '../app.module.scss';
+import { Card } from '../card/card';
+import style from '../app/app.module.scss';
 import { Outlet } from 'react-router-dom';
 import { useContext } from 'react';
 import {

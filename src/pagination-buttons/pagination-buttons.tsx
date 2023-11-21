@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import style from '../app.module.scss';
+import style from '../app/app.module.scss';
 
 interface Props {
   page: number;

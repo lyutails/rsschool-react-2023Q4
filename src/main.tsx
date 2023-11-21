@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.module.scss';
-import ErrorBoundary from './error_boundary';
-import { App } from './app';
+import ErrorBoundary from './error_boundary/error_boundary';
+import { App } from './app/app';
 import { Provider } from 'react-redux';
 import { store } from './state_management/store';
 

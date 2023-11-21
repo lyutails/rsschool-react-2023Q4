@@ -23,27 +23,27 @@
         </h1>
         <div class="clearfix">
           <div class="fl pad1y space-right2">
-            <span class="strong">12.69% </span>
+            <span class="strong">46.03% </span>
             <span class="quiet">Statements</span>
-            <span class="fraction">8/63</span>
+            <span class="fraction">29/63</span>
+          </div>
+
+          <div class="fl pad1y space-right2">
+            <span class="strong">33.33% </span>
+            <span class="quiet">Branches</span>
+            <span class="fraction">2/6</span>
           </div>
 
           <div class="fl pad1y space-right2">
             <span class="strong">100% </span>
-            <span class="quiet">Branches</span>
-            <span class="fraction">0/0</span>
-          </div>
-
-          <div class="fl pad1y space-right2">
-            <span class="strong">0% </span>
             <span class="quiet">Functions</span>
-            <span class="fraction">0/1</span>
+            <span class="fraction">1/1</span>
           </div>
 
           <div class="fl pad1y space-right2">
-            <span class="strong">12.69% </span>
+            <span class="strong">46.03% </span>
             <span class="quiet">Lines</span>
-            <span class="fraction">8/63</span>
+            <span class="fraction">29/63</span>
           </div>
         </div>
         <p class="quiet">
@@ -130,6 +130,31 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -157,34 +182,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import style from './card-details.module.scss';
 import { ApiResponseRace, useGetASpeciesQuery } from '../api/api';
 import { Link, useParams } from 'react-router-dom';
@@ -192,32 +192,32 @@ import { useEffect, useState } from 'react';
 import Spinner from '../spinner';
 import { Details } from './details';
 &nbsp;
-export <span class="fstat-no" title="function not covered" >function CardDetails() {</span>
-<span class="cstat-no" title="statement not covered" >  const { id, pageNumber, querySearch } = useParams();</span>
-<span class="cstat-no" title="statement not covered" >  const [aSpecies, setASpecies] = useState&lt;ApiResponseRace | null&gt;(null);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const { data, error, isLoading } = useGetASpeciesQuery({</span>
-<span class="cstat-no" title="statement not covered" >    id: id,</span>
-<span class="cstat-no" title="statement not covered" >  });</span>
-<span class="cstat-no" title="statement not covered" >  if (error) {</span>
+export function CardDetails() {
+  const { id, pageNumber, querySearch } = useParams();
+  const [aSpecies, setASpecies] = useState&lt;ApiResponseRace | null&gt;(null);
+&nbsp;
+  const { data, error, isLoading } = useGetASpeciesQuery({
+    id: id,
+  });
+  if (error) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    throw new Error(</span>
 <span class="cstat-no" title="statement not covered" >      'smth went wrong while trying to fetch a species with rtk query'</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (data !== undefined) {</span>
+&nbsp;
+  useEffect(() =&gt; {
+    if (data !== undefined) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      setASpecies(data);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >  }, [data]);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const queryInput = querySearch</span>
+  }, [data]);
+&nbsp;
+  const queryInput = <span class="branch-0 cbranch-no" title="branch not covered" >querySearch</span>
 <span class="cstat-no" title="statement not covered" >    ? `/page/${pageNumber}/search/${querySearch}`</span>
-<span class="cstat-no" title="statement not covered" >    : `/page/${pageNumber}`;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  if (isLoading) {</span>
-<span class="cstat-no" title="statement not covered" >    return &lt;Spinner /&gt;;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+    : `/page/${pageNumber}`;
+&nbsp;
+  if (isLoading) {
+    return &lt;Spinner /&gt;;
+<span class="branch-0 cbranch-no" title="branch not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return (</span>
 <span class="cstat-no" title="statement not covered" >    aSpecies !== null &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >      &lt;div className={style.details_all}&gt;</span>
@@ -245,9 +245,9 @@ export <span class="fstat-no" title="function not covered" >function CardDetails
 <span class="cstat-no" title="statement not covered" >          &lt;div className={style.overlay}&gt;&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/Link&gt;</span>
 <span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+    )
+  );
+}
 &nbsp;</pre></td></tr></table></pre>
 
       <div class="push"></div>
@@ -262,7 +262,7 @@ export <span class="fstat-no" title="function not covered" >function CardDetails
         rel="noopener noreferrer"
         >istanbul</a
       >
-      at 2023-11-21T05:03:33.061Z
+      at 2023-11-21T05:37:15.405Z
     </div>
     <script src="../../prettify.js"></script>
     <script>

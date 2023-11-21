@@ -9,4 +9,9 @@ describe('check what is going on in bottom section', () => {
     const button = screen.queryByText('submit');
     expect(button).not.toBeInTheDocument();
   });
+  it('bottom section contains text', () => {
+    render(<BottomSection />);
+    const text = screen.getByTestId('detail');
+    expect(text).toBeInTheDocument();
+  });
 });

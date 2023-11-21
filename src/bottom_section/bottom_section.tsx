@@ -26,7 +26,7 @@ export function BottomSection() {
           );
         })}
       </div>
-      <div id="detail">
+      <div data-testid="detail" id="detail">
         <Outlet />
       </div>
     </div>

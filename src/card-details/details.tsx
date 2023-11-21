@@ -5,9 +5,9 @@ export function Details(props: ApiResponseRace) {
   return (
     <div className={style.card_wrapper}>
       <div className={style.card_text}>
-        <div className={`${style.card_info} ${style.name}`}>
+        <h3 className={`${style.card_info} ${style.name}`}>
           Name: {props.name}
-        </div>
+        </h3>
         <div className={style.card_info}>
           Classification: {props.classification}
         </div>

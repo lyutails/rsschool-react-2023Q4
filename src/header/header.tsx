@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import style from '../app/app.module.scss';
+import style from './header.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../state_management/store';

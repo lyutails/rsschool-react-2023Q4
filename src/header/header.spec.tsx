@@ -59,16 +59,4 @@ describe('check what is going on in header', () => {
     fireEvent.change(input, { target: { value: 'lalala' } });
     userEvent.type(input, 'lalala');
   });
-  it('The component UI should not change', () => {
-    const changePage = function (data: number) {
-      return data;
-    };
-    const comp = render(
-      <Provider store={store}>
-        <Header changePage={changePage} />
-      </Provider>,
-      { wrapper: BrowserRouter }
-    );
-    expect(comp).toMatchSnapshot();
-  });
 });

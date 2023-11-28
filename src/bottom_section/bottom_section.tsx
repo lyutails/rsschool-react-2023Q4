@@ -6,7 +6,7 @@ import {
   PageContext,
   SearchContext,
   SpeciesContext,
-} from '../hero_page/hero_page';
+} from '../pages/hero_page/hero_page';
 
 export function BottomSection() {
   const species = useContext(SpeciesContext);

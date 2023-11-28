@@ -3,7 +3,7 @@ import { HeroPage } from './hero_page';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
-import { store } from '../state_management/store';
+import { store } from '../../state_management/store';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('check what is going on in hero', () => {

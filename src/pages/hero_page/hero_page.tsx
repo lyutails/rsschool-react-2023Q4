@@ -1,17 +1,17 @@
 import { createContext, useEffect, useState } from 'react';
-import { ApiResponseRace } from '../api/api';
-import style from '../app/app.module.scss';
-import { BottomSection } from '../bottom_section/bottom_section';
-import { Footer } from '../footer/footer';
-import { Header } from '../header/header';
-import { PaginationButtons } from '../pagination-buttons/pagination-buttons';
-import Spinner from '../spinner/spinner';
+import { ApiResponseRace } from '../../api/api';
+import style from '../../app/app.module.scss';
+import { BottomSection } from '../../bottom_section/bottom_section';
+import { Footer } from '../../footer/footer';
+import { Header } from '../../header/header';
+import { PaginationButtons } from '../../pagination-buttons/pagination-buttons';
+import Spinner from '../../spinner/spinner';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../state_management/store';
-import { useGetSpeciesQuery } from '../api/api';
-import { totalSpeciesFound } from '../state_management/counterSlice';
-import { getLoading } from '../state_management/loadingSlice';
+import { RootState } from '../../state_management/store';
+import { useGetSpeciesQuery } from '../../api/api';
+import { totalSpeciesFound } from '../../state_management/counterSlice';
+import { getLoading } from '../../state_management/loadingSlice';
 
 export const SpeciesContext = createContext<ApiResponseRace[]>([]);
 export const PageContext = createContext<number>(1);

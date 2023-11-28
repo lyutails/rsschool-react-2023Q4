@@ -6,7 +6,7 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import { HeroPage } from '../pages/hero_page/hero_page';
-import ErrorPage from '../error-page/error-page';
+import ErrorPage from '../pages/error-page/error-page';
 import { CardDetails } from '../card-details/card-details';
 
 function Layout() {

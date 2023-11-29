@@ -1,13 +1,6 @@
-import {
-  Outlet,
-  Route,
-  RouterProvider,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from 'react-router-dom';
-import { HeroPage } from '../pages/hero_page/hero_page';
+/* import { HeroPage } from '../pages/hero_page/hero_page';
 import ErrorPage from '../pages/error-page/error-page';
-import { CardDetails } from '../card-details/card-details';
+import { CardDetails } from '../pages/species/[card-details]';
 
 function Layout() {
   return (
@@ -47,3 +40,4 @@ const router = createBrowserRouter(
 export function App() {
   return <RouterProvider router={router}></RouterProvider>;
 }
+ */

@@ -30,8 +30,8 @@ export interface ApiResponse {
 
 export interface SearchParams {
   pageNumber?: number;
-  querySearch?: string;
-  id?: string;
+  querySearch?: string | string[] | undefined;
+  id?: string | string[] | undefined;
 }
 
 export const speciesApi = createApi({

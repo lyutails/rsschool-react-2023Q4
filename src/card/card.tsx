@@ -1,5 +1,4 @@
 import style from '../app/app.module.scss';
-import { NavLink } from 'react-router-dom';
 import { ApiResponseRace } from '../api/api';
 import grogu from '../assets/grogu.png';
 import bb8 from '../assets/droid.png';
@@ -38,6 +37,7 @@ import zabrak from '../assets/zabrak.png';
 import tholothian from '../assets/tholothian.png';
 import geonosian from '../assets/geonosian.png';
 import keldor from '../assets/keldor.png';
+import Link from 'next/link';
 
 const speciesPics: Record<string, string> = {
   "Yoda's species": grogu,
@@ -94,7 +94,7 @@ export function Card({ species, page, search }: Props) {
     : `/page/${page}/species/${id}`;
 
   return (
-    <NavLink to={query} className={style.card_link}>
+    <Link href={query} className={style.card_link}>
       <div className={style.card_wrapper}>
         <div className={style.card_fancy}>
           {'>>>'}
@@ -119,6 +119,6 @@ export function Card({ species, page, search }: Props) {
           <div className={style.card_info}>Language: {species.language}</div>
         </div>
       </div>
-    </NavLink>
+    </Link>
   );
 }

@@ -15,14 +15,34 @@
     "isolatedModules": true,
     "noImplicitAny": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "paths": {
       "react": ["./node_modules/@types/react"]
-    }
+    },
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }],
+  "include": [
+    "src",
+    "pages/about.tsx",
+    "pages/404.tsx",
+    "pages/index.tsx",
+    "pages/_app.tsx",
+    "pages/_document.tsx",
+    ".next/types/**/*.ts",
+    "pages/species"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
   "resolutions": {
     "@types/react": "^17.0.38"
-  }
+  },
+  "exclude": ["node_modules"]
 }

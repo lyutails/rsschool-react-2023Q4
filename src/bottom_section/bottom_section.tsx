@@ -1,12 +1,8 @@
 import { Card } from '../card/card';
 import style from '../app/app.module.scss';
-import { Outlet } from 'react-router-dom';
+// import { Outlet } from 'react-router-dom';
 import { useContext } from 'react';
-import {
-  PageContext,
-  SearchContext,
-  SpeciesContext,
-} from '../pages/hero_page/hero_page';
+import { PageContext, SearchContext, SpeciesContext } from '../../pages/index';
 
 export function BottomSection() {
   const species = useContext(SpeciesContext);
@@ -26,9 +22,9 @@ export function BottomSection() {
           );
         })}
       </div>
-      <div data-testid="detail" id="detail">
+      {/* <div data-testid="detail" id="detail">
         <Outlet />
-      </div>
+      </div> */}
     </div>
   );
 }

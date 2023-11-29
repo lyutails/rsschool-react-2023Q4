@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import style from './header.module.scss';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../state_management/store';
 import { makeSearch, clearSearch } from '../state_management/searchSlice';
+import Link from 'next/link';
 
 interface Props {
   changePage: (data: number) => void;
@@ -11,7 +11,7 @@ interface Props {
 
 export function Header({ changePage }: Props) {
   const [hasError, setHasError] = useState<boolean>(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [userSearch, setUserSearch] = useState<string>('');
 
@@ -46,7 +46,7 @@ export function Header({ changePage }: Props) {
               setUserSearch('');
               // fetchSpecies('');
               changePage(1);
-              navigate(`/page/1`);
+              // navigate(`/page/1`);
             }}
           >
             Cross
@@ -60,10 +60,10 @@ export function Header({ changePage }: Props) {
                 ? dispatch(makeSearch(userSearch))
                 : dispatch(clearSearch());
               changePage(1);
-              const query = userInputValue.length
+              /* const query = userInputValue.length
                 ? `/page/1/search/${userInputValue}`
-                : `/page/1`;
-              navigate(query);
+                : `/page/1`; */
+              // navigate(query);
             }}
           >
             Search and Save
@@ -74,6 +74,9 @@ export function Header({ changePage }: Props) {
           >
             Get Error
           </button>
+          <Link href="/about" className={style.cross}>
+            About
+          </Link>
         </div>
       </div>
       <div className={style.grogu_looking}></div>

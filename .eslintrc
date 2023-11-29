@@ -4,7 +4,9 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
-    "prettier"
+    "prettier",
+    "next/core-web-vitals",
+    "eslint:recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -20,7 +22,16 @@
     "jest": true,
     "node": true
   },
-  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "unused-imports",
+    "prettier"
+  ],
+  "globals": {
+    "JSX": "readonly"
+  },
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
@@ -35,7 +46,11 @@
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-var-requires": "off",
     "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@next/next/no-img-element": "off",
+    "unused-imports/no-unused-imports": "error"
   },
   "settings": {
     "react": {

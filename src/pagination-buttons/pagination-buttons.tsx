@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import style from '../app/app.module.scss';
 
 interface Props {
@@ -13,22 +12,21 @@ interface Props {
 export function PaginationButtons({
   page,
   changePage,
-  totalCount,
-  search,
+  totalCount, // search,
 }: Props) {
   const maxPage = Math.ceil(totalCount / 10);
   const minPage = 1;
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <div className={style.pagination_wrapper}>
       <button
         onClick={() => {
           page > minPage && changePage(page - 1);
-          if (search !== '' && page > minPage) {
+          /* if (search !== '' && page > minPage) {
             navigate(`/page/${page - 1}/search/${search}`);
           } else {
             navigate(`/page/${page - 1}`);
-          }
+          } */
         }}
       >
         previous
@@ -39,11 +37,11 @@ export function PaginationButtons({
       <button
         onClick={() => {
           page < maxPage && changePage(page + 1);
-          if (search !== '' && page < maxPage) {
+          /* if (search !== '' && page < maxPage) {
             navigate(`/page/${page + 1}/search/${search}`);
           } else {
             navigate(`/page/${page + 1}`);
-          }
+          } */
         }}
       >
         next

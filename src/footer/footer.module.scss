@@ -1,0 +1,44 @@
+.footer {
+  // flex: 1 0 auto;
+  flex-shrink: 0;
+  width: 100%;
+  background-color: #333;
+  margin-top: 10px;
+
+  &_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90vw;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &_rsschool_logo {
+    background-image: url('../assets/logo-rs1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 10vw;
+    aspect-ratio: 1 / 0.88;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      filter: invert(1);
+      cursor: pointer;
+    }
+  }
+
+  &_lyutails {
+    color: white;
+    transition: all 0.2s ease-in-out;
+    font-size: 20px;
+
+    &:hover {
+      color: red;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
